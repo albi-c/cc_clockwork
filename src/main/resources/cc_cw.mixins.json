@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "cc_cw.refmap.json",
   "mixins": [
+    "FlapBearingBlockEntityMixin"
   ],
   "client": [
   ],
