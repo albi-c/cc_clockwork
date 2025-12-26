@@ -12,29 +12,29 @@ import org.valkyrienskies.clockwork.content.contraptions.flap.FlapBearingBlockEn
 @Mixin(FlapBearingBlockEntity.class)
 public class FlapBearingBlockEntityMixin implements FlapBearingBlockEntityMixinAccessor {
     @Unique
-    boolean isLocked = false;
+    boolean cc_cw$isLocked = false;
     @Unique
-    int lockedPower;
+    int cc_cw$lockedPower;
 
     @Override
-    public void setLockedPower(int power) {
-        isLocked = true;
-        lockedPower = power;
+    public void cc_cw$setLockedPower(int power) {
+        cc_cw$isLocked = true;
+        cc_cw$lockedPower = power;
     }
     @Override
-    public void unlock() {
-        isLocked = false;
+    public void cc_cw$unlock() {
+        cc_cw$isLocked = false;
     }
 
     @Inject(method = "getPower", at = @At("HEAD"), remap = false, cancellable = true)
     void getPower(CallbackInfoReturnable<Integer> cir) {
-        if (isLocked) {
-            cir.setReturnValue(lockedPower);
+        if (cc_cw$isLocked) {
+            cir.setReturnValue(cc_cw$lockedPower);
         }
     }
 
     @Inject(method = "disassemble", at = @At("HEAD"), remap = false)
     void disassemble(CallbackInfo ci) {
-        isLocked = false;
+        cc_cw$isLocked = false;
     }
 }

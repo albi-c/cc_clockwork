@@ -69,9 +69,9 @@ versionRange = "[${cc_tweaked_version},)"
 ordering = "AFTER"
 side = "BOTH"
 
-#[[dependencies."${mod_id}"]]
-#modId = "createbigcannons"
-#mandatory = false
-#versionRange = "[${cbc_version},)"
-#ordering = "AFTER"
-#side = "BOTH"
+[[dependencies."${mod_id}"]]
+modId = "createbigcannons"
+mandatory = false
+versionRange = "[${cbc_version},)"
+ordering = "AFTER"
+side = "BOTH"

@@ -1,6 +1,6 @@
 package me.tabin.cc_cw.peripherals;
 
 public interface FlapBearingBlockEntityMixinAccessor {
-    void setLockedPower(int lockedPower);
-    void unlock();
+    void cc_cw$setLockedPower(int lockedPower);
+    void cc_cw$unlock();
 }

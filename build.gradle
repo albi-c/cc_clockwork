@@ -170,9 +170,9 @@ repositories {
         url = "https://files.minecraftforge.net/maven"
     }
 
-//    maven {
-//        url = "https://maven.pkg.github.com/Cannoneers-of-Create/CreateBigCannons"
-//    }
+    maven {
+        url = "https://cursemaven.com"
+    }
 }
 
 dependencies {
@@ -186,7 +186,8 @@ dependencies {
 
     compileOnly "org.valkyrienskies:clockwork-forge:${minecraft_version}-${clockwork_version}"
 
-//    compileOnly "com.rbasamoyai:createbigcannons:${cbc_version}+mc.${minecraft_version}-forge"
+//    implementation fg.deobf("curse.maven:create-big-cannons-646668:${cbc_curse_maven_id}")
+    compileOnly "curse.maven:create-big-cannons-646668:${cbc_curse_maven_id}"
 
     implementation(fg.deobf("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false })
     implementation(fg.deobf("net.createmod.ponder:Ponder-Forge-${minecraft_version}:${ponder_version}"))

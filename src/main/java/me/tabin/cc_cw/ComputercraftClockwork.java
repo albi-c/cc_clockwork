@@ -2,11 +2,14 @@ package me.tabin.cc_cw;
 
 import com.mojang.logging.LogUtils;
 import dan200.computercraft.api.ComputerCraftAPI;
+import me.tabin.cc_cw.peripherals.CannonMountCheatPeripheral;
+import me.tabin.cc_cw.peripherals.CannonMountPeripheral;
 import me.tabin.cc_cw.peripherals.FlapBearingPeripheral;
 import me.tabin.cc_cw.peripherals.PhysBearingPeripheral;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -30,10 +33,16 @@ public class ComputercraftClockwork {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        LOGGER.info("{}{}", Config.magicNumberIntroduction, Config.magicNumber);
-
+        LOGGER.debug("registering peripherals");
         ComputerCraftAPI.registerGenericSource(new PhysBearingPeripheral());
         ComputerCraftAPI.registerGenericSource(new FlapBearingPeripheral());
+        if (ModList.get().isLoaded("createbigcannons")) {
+            if (Config.cheatCannonMount) {
+                ComputerCraftAPI.registerGenericSource(new CannonMountCheatPeripheral());
+            } else {
+                ComputerCraftAPI.registerGenericSource(new CannonMountPeripheral());
+            }
+        }
     }
 
     public static ResourceLocation resourceLocation(String path) {
