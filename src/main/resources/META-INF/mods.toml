@@ -63,6 +63,13 @@ ordering = "NONE"
 side = "BOTH"
 
 [[dependencies."${mod_id}"]]
+modId = "vs_clockwork"
+mandatory = true
+versionRange = "${cw_version_range}"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies."${mod_id}"]]
 modId = "computercraft"
 mandatory = true
 versionRange = "[${cc_tweaked_version},)"
