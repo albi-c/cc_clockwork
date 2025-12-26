@@ -1,6 +1,6 @@
 # CC: Clockwork
 
-Clockwork peripherals for ComputerCraft  
+Clockwork peripherals for ComputerCraft
 
 ### Currently implemented
 
