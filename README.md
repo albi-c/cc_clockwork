@@ -1,6 +1,6 @@
 # CC: Clockwork
 
-Clockwork peripherals for ComputerCraft
+Clockwork peripherals for CC: Tweaked
 
 ### Currently implemented
 
@@ -8,4 +8,4 @@ Clockwork peripherals for ComputerCraft
 - Flap Bearing\*
 - Cannon Mount from Create Big Cannons\*
 
-\* has cheat mode - movement without requiring input rotation, can be disabled in config
+\* has movement without requiring input rotation, can be disabled in config
