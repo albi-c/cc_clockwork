@@ -28,6 +28,9 @@ public class PhysBearingPeripheral implements GenericPeripheral {
     public @LuaFunction void disassemble(@NonNull PhysBearingBlockEntity be) {
         be.disassemble();
     }
+    public @LuaFunction boolean isAssembled(@NonNull PhysBearingBlockEntity be) {
+        return be.isRunning();
+    }
 
     public @LuaFunction void setLockedMode(@NonNull PhysBearingBlockEntity be) {
         getMovementMode(be).setValue(ContraptionController.LockedMode.LOCKED.ordinal());

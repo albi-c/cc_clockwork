@@ -18,6 +18,9 @@ public class FlapBearingPeripheral implements GenericPeripheral {
     public @LuaFunction void disassemble(@NonNull FlapBearingBlockEntity be) {
         be.disassemble();
     }
+    public @LuaFunction boolean isAssembled(@NonNull FlapBearingBlockEntity be) {
+        return be.isRunning();
+    }
 
     public @LuaFunction void setAngle(@NonNull FlapBearingBlockEntity be, double angle) {
         if (be.isRunning()) {
@@ -29,7 +32,7 @@ public class FlapBearingPeripheral implements GenericPeripheral {
             ((FlapBearingBlockEntityMixinAccessor) be).cc_cw$setLockedPower(Math.max(-15, Math.min(15, power)));
         }
     }
-    public @LuaFunction void unlockAngle(@NonNull FlapBearingBlockEntity be) {
+    public @LuaFunction void resetAngle(@NonNull FlapBearingBlockEntity be) {
         ((FlapBearingBlockEntityMixinAccessor) be).cc_cw$unlock();
     }
     public @LuaFunction float getAngle(@NonNull FlapBearingBlockEntity be) {
