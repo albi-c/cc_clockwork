@@ -72,4 +72,8 @@ public class CannonMountPeripheral implements GenericPeripheral {
     public @LuaFunction @NonNull String getDirection(@NonNull CannonMountBlockEntity be) {
         return be.getBlockState().getValue(BlockStateProperties.HORIZONTAL_FACING).toString();
     }
+
+    public @LuaFunction boolean isCheatMode(@NonNull CannonMountBlockEntity be) {
+        return false;
+    }
 }

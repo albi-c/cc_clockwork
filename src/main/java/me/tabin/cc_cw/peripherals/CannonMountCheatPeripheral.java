@@ -15,4 +15,9 @@ public class CannonMountCheatPeripheral extends CannonMountPeripheral {
             be.setYaw((float) value);
         }
     }
+
+    @Override
+    public @LuaFunction boolean isCheatMode(@NonNull CannonMountBlockEntity be) {
+        return true;
+    }
 }

@@ -38,4 +38,8 @@ public class FlapBearingPeripheral implements GenericPeripheral {
     public @LuaFunction float getAngle(@NonNull FlapBearingBlockEntity be) {
         return be.getInterpolatedAngle(0.f);
     }
+
+    public @LuaFunction boolean isCheatMode(@NonNull FlapBearingBlockEntity be) {
+        return false;
+    }
 }

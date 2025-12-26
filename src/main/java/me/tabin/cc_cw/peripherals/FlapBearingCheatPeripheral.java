@@ -17,4 +17,9 @@ public class FlapBearingCheatPeripheral extends FlapBearingPeripheral {
             ((FlapBearingBlockEntityMixinAccessor) be).cc_cw$setSpeedLockedPower(Math.max(-15, Math.min(15, power)));
         }
     }
+
+    @Override
+    public @LuaFunction boolean isCheatMode(@NonNull FlapBearingBlockEntity be) {
+        return true;
+    }
 }
